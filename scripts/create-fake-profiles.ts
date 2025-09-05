@@ -1,8 +1,7 @@
 // import "dotenv/config";
 import { createClient } from "@supabase/supabase-js";
 import { faker } from "@faker-js/faker";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 // Configuration
 const SUPABASE_URL = process.env.SUPABASE_URL!;

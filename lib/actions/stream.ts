@@ -3,6 +3,7 @@
 import { StreamChat } from "stream-chat";
 import { createClient } from "../supabase/server";
 
+
 export async function getStreamUserToken() {
   const supabase = await createClient();
 
@@ -25,12 +26,16 @@ export async function getStreamUserToken() {
     throw new Error("Failed to fetch user data");
   }
 
+
   const serverClient = StreamChat.getInstance(
     process.env.NEXT_PUBLIC_STREAM_API_KEY!,
-    process.env.STREAM_API_SECRET!
+    process.env.NEXT_PUBLIC_STREAM_API_SECRET!
   );
 
+
   const token = serverClient.createToken(user.id);
+
+  console.log(serverClient);
 
   await serverClient.upsertUser({
     id: user.id,
