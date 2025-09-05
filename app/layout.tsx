@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "StreamMatch",
   description: "A platform for streaming and matching content",
+  icons: {
+    icon: "/icon.png",
+  }
 };
 
 export default function RootLayout({
